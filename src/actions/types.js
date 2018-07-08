@@ -1,0 +1,9 @@
+export const FETCH_POSTS= 'FETCH-POSTS';
+export const NEW_POST= 'NEW-POST';
+export const ADD_TO_CART= 'ADD_TO_CART';
+export const REMOVE_POST = 'REMOVE_POST';
+export const GET_SINGLE_PRODUCT ='GET_SINGLE_PRODUCT';
+export const GET_QUANTITY = 'GET_QUANTITY';
+export const USER_AUTHENTICATION = 'USER_AUTHENTICATION';
+
+
