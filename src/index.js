@@ -11,10 +11,6 @@ import Posts from './Components/Posts';
 import Cart from './Components/Cart';
 import Login from './Components/Login';
 
-
-
-
-
 ReactDOM.render(
 <Provider store={store}>
 <BrowserRouter >

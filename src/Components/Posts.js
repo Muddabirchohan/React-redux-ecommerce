@@ -10,6 +10,7 @@ import { Card, CardMedia, CardTitle, CardText, CardActions } from 'react-toolbox
 import Button from 'react-toolbox/lib/button/Button';
 import {Link} from 'react-router-dom';
 import Input from 'react-toolbox/lib/input';
+import shop from '../images/shop.png';
 
 import '../App.css';
 import Dialog from 'react-toolbox/lib/dialog/Dialog';
@@ -76,19 +77,21 @@ const { open } = this.state;
 
         return (
 <ThemeProvider theme={theme}>
-<div style={{backgroundColor: '#5d5958e0'}}> 
-<AppBar title='React-Redux' leftIcon='menu' >   
+<div > 
+<AppBar>   
 
- {/* <Button onClick={this.handleToggle}>  Login </Button>  */}
 
-<Link to="/home"> Home </Link> 
 
-<Link to="/cart" style={{marginLeft: '20px'}}>
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+<Link to="/home" style={{marginLeft: '1150px'}}> Home </Link> 
+
+<Link to="/cart" style={{marginLeft: '30px'}}>
+{/* <img src={cart} height="50px"/> */}
+    <img src={shop} />
     </Link>
+   
     <div style={{fontSize:'28px',marginLeft: '5px'}} > {this.props.cartCounter} </div> 
     </AppBar>
-
+    
 
 
     <div>
@@ -112,10 +115,10 @@ const { open } = this.state;
 <div className="cardAllign">    
 {this.props.cart.map(post => {
             return (
-                <Card style={{ width: '330px', height: '355px', marginLeft: '20px', marginTop: '30px'}}>              
+                <Card style={{ width: '320px', height: '310px', marginLeft: '50px', marginTop: '30px'}}>              
                         <div key={post._id} >
-                        <p>  <img src={`https://greencommunitylaundry.herokuapp.com/api/Images/${post.image}`} style={{marginLeft: '15px',height: '200px',borderRadius: '15px',}} width="90%" /> </p> 
-                        <h3 style={{ marginLeft: '130px'}}> {post.name} </h3>
+                        <p>  <img src={`https://greencommunitylaundry.herokuapp.com/api/Images/${post.image}`} style={{height: '190px',borderRadius: '5px',}} width="100%" /> </p> 
+                        <h5 style={{ marginLeft: '130px'}}> {post.name} </h5>
                         <p style={{marginLeft: '100px'}}> <Button onClick={()=> this.addCart(post, post._id)} flat primary> Add To Cart </Button> </p>
                     <Link to="/products" onClick={()=> this.props.getSingleProduct(post,post._id)}> <Button raised primary icon='bookmark'>  details </Button> </Link>
                     </div>
